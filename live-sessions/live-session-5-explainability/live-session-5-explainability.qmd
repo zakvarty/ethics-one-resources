@@ -1,0 +1,226 @@
+---
+title: "Live Session 5: Explainability"
+subtitle: ""
+author: Dr Zak Varty
+editor: source
+format:
+  revealjs:
+    theme: imperial-ethics-theme.scss #(default / dark / simple)
+    logo: assets/ethics-1-logo.jpg
+    bibliography: assets/refs.bib
+    footer: "MLDS Ethics, Part 1 - Zak Varty"
+    menu: true
+    slide-number: true
+    show-slide-number: all # (all / print / speaker)
+    self-contained: true # (set to true before publishing html to web)
+    chalkboard: false # (conflicts with self-contained)
+      #src: drawings.json
+      #theme: whiteboard
+      #read-only: true
+      #buttons: false
+    width: 1600 # default is 1050
+    height: 900 # default is 700
+---
+
+## Welcome!
+
+### This Session: 
+
+1. Group Discussion: Explainability Methods (15 mins)
+
+<br>
+
+2. Feedback from Groups (15 mins)
+
+<br>
+
+3. Group Discussion: LIME paper  (15 mins)
+
+<br>
+
+4. Feedback from groups (15 mins)
+
+# Explainability Methods
+  
+## ICE, PDP, LIME, SHAP
+
+In breakout rooms discuss: 
+
+<br>
+
+  - What does this method show? 
+  
+  - When might this be a good method to use? 
+  
+  - What are the drawbacks/limitations of this method?
+  
+  
+## Group 1 - ICE
+
+```{r}
+countdown::countdown(4)
+```
+
+::::{.columns}
+:::{.column width="30%"}
+
+<br>
+
+  - What does this method show? 
+  
+  - When might this be a good method to use? 
+  
+  - What are the drawbacks/limitations of this method?
+  
+:::
+:::{.column width="70%"}
+```{r}
+#| echo: false 
+#| out-width: 80%
+#| fig-align: center
+knitr::include_graphics("images/ice-plot.png")
+```
+:::
+::::
+
+## Group 2 - PDP
+
+```{r}
+countdown::countdown(4)
+```
+  
+::::{.columns}
+:::{.column width="30%"}
+
+<br>
+
+  - What does this method show? 
+  
+  - When might this be a good method to use? 
+  
+  - What are the drawbacks/limitations of this method?
+  
+:::
+:::{.column width="70%"}
+```{r}
+#| echo: false 
+#| out-width: 80%
+#| fig-align: center
+knitr::include_graphics("images/pdp-plot.png")
+```
+:::
+::::
+  
+## Group 3 - LIME
+
+```{r}
+countdown::countdown(4)
+```
+  
+::::{.columns}
+:::{.column width="30%"}
+
+<br>
+
+  - What does this method show? 
+  
+  - When might this be a good method to use? 
+  
+  - What are the drawbacks/limitations of this method?
+  
+:::
+:::{.column width="70%"}
+```{r}
+#| echo: false 
+#| out-width: 60%
+#| fig-align: center
+knitr::include_graphics("images/lime-plot.png")
+```
+:::
+::::
+  
+## Group 4 - SHAP 
+
+```{r}
+countdown::countdown(4)
+```
+
+::::{.columns}
+:::{.column width="30%"}
+
+<br>
+
+  - What does this method show? 
+  
+  - When might this be a good method to use? 
+  
+  - What are the drawbacks/limitations of this method?
+  
+:::
+:::{.column width="70%"}
+```{r}
+#| echo: false 
+#| out-width: 80%
+#| fig-align: center
+knitr::include_graphics("images/shap-plot.png")
+```
+:::
+::::
+  
+# Methods Papers 
+  
+## Typical Strucutre of a Methods Paper
+  
+```{r}
+#| echo: false 
+#| out-width: 80%
+knitr::include_graphics("images/methods-paper-structure-1.png")
+```
+
+## Typical Strucutre of a Methods Paper
+  
+```{r}
+#| echo: false 
+#| out-width: 80%
+knitr::include_graphics("images/methods-paper-structure-2.png")
+```
+
+
+## Group 1 - End matter 
+
+```{r}
+countdown::countdown(5)
+```
+
+<br>
+
+- How do the authors use the end-matter to "sell" their new work?
+- What other work has been done in this area?
+- What limitations does the method have? 
+- How could this work be taken further?
+  
+## Group 2 - Methodology 
+  
+```{r}
+countdown::countdown(5)
+```
+
+<br>
+
+- What new methods are introduced in this paper?
+- Is it clear which aspects of this are novel?
+- Were there any parts that you found particularly clear or confusing?
+  
+  
+## Group 3 - Theory / Evidence
+  
+```{r}
+countdown::countdown(5)
+```
+
+<br>
+
+- What simulations or theoretical results do the authors present to justify their new method?
+- What data examples do they use to demonstrate their new method? 
+- Do you think that these are effective, or can you think of better examples?
+   
