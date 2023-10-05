@@ -1,0 +1,379 @@
+---
+title: "Template Slides"
+subtitle: "Template slides for MLDS Ethics (Part 1) lecture slides."
+author: Zak Varty
+date: "September 2022"
+author-meta: "Teaching Fellow in Statistics, Imperial College London"
+editor: source
+format:
+  revealjs:
+    theme: ../00_assets/imperial-ethics-theme.scss #(default / dark / simple)
+    logo: ../00_assets/ethics-1-logo.jpg
+    footer: "MLDS Ethics - Part 1"
+    menu: true
+    slide-number: true
+    show-slide-number: all # (all / print / speaker)
+    self-contained: true # (set to true before publishing html to web)
+    chalkboard: false # (conflicts with self-contained)
+      #src: drawings.json
+      #theme: whiteboard
+      #read-only: true
+      #buttons: false
+    width: 1600 # default is 1050
+    height: 900 # default is 700
+---
+
+# Section 1
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+**Sections** of the presentation are separated using top-level headers.
+
+**Slides** are separated by second-level headers.
+
+------------------------------------------------------------------------
+
+Horizontal rules (`---`) can be used to separate slides when you do not want a title on the new slide.
+
+## Bullets
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown;
+-   Output from executable code.
+
+Bullets can be:
+
+1.  Unnumbered using `-` or `*`;
+2.  Numbered using `1.`, `2.`, and so on.
+
+## Incremental Bullets
+
+You can set all bullets to appear incrementally by adding `incremental: true` under the `reveljs:` section of the YAML header.
+
+You can make any list incremental by surrounding it in a `.incremental` div.
+
+``` markdown
+::: {.incremental}
+
+- Eat spaghetti
+- Drink wine
+
+:::
+```
+
+## Pauses
+
+You can insert a pause within a slide (keeping the content after the pause hidden) buy inserting three dots separated by spaces.
+
+. . .
+
+Like this!
+
+``` markdown
+You can insert a pause within a slide (keeping the content after the pause 
+hidden) by inserting three dots separated by spaces. 
+
+. . . 
+
+Like this! 
+```
+
+## Dealing with overflow {.smaller}
+
+Option 1 is to add the `{.smaller}` class to the slide (after the slide title)
+
+1.  Bullet Point Text
+2.  Bullet Point Text
+3.  Bullet Point Text
+4.  Bullet Point Text
+5.  Bullet Point Text
+6.  Bullet Point Text
+7.  Bullet Point Text
+8.  Bullet Point Text
+9.  Bullet Point Text
+10. Bullet Point Text
+11. Bullet Point Text
+12. Bullet Point Text
+
+## Dealing with overflow {.scrollable}
+
+Option 2 is to add the `{.scrollable}` class to the slide (after the slide title)
+
+1.  Bullet Point Text
+2.  Bullet Point Text
+3.  Bullet Point Text
+4.  Bullet Point Text
+5.  Bullet Point Text
+6.  Bullet Point Text
+7.  Bullet Point Text
+8.  Bullet Point Text
+9.  Bullet Point Text
+
+## Dealing with overflow {.scrollable}
+
+Note that after \~ 12 items on `{.smaller}` you run out of vertical space.
+
+Note that after 9 items on `{.scrollable}`, the "tens" digit falls off the left of the slide. This is apparently a [CSS/browser issue](https://developercommunity.visualstudio.com/t/markdown-list-numbering-thats-larger-than-10-is-br/141710), and chrome can handle up to 20.
+
+# Section 2
+
+## Code
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+#| echo: true
+x <- 0 
+y <- 0
+for (i in 1:100){
+  x <- x + 1
+  y <- x + 1
+}
+print(c(x,y))
+```
+
+## Code highlighting
+
+The `code-line-numbers` attribute of code blocks can be used to highlight a range of lines.
+
+For executable cells this can be added to the cell options using the hashpipe.
+
+-   `code-line-numbers="3-6"` will highlight a range of lines
+-   `code-line-numbers="1,4"` will highlight a selection of lines
+-   `code-line-numbers= |3-6|1,4|7` will progressively highlight the sections separated by pipes
+
+## Code highlighting - Example
+
+**Note:** unlike other documents, presentations have `echo: false` by default.
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|3-6|1,4|7"
+x <- 0 
+y <- 0
+for (i in 1:100){
+  x <- x + 1
+  y <- x + 1
+}
+print(c(x,y))
+```
+
+## Code Output
+
+To be specified via a hashpipe argument to the executable code block. </br>
+
+|                   |                                                                          |
+|------------------|------------------------------------------------------|
+| `fragment`        | delay showing until slide is advanced.                                   |
+| `slide`           | show on subsequent slide.                                                |
+| `column`          | show in a column adjacent to code.                                       |
+| `column-fragment` | delay until slide is advanced, showing in a column adjacent to the code. |
+
+: `output-location =`
+
+## Figures
+
+```{r}
+#|fig-cap: "An example plot of the `mtcars` data."
+#|fig-asp: 1
+par(bg = NA)
+plot(
+  x = mtcars$mpg, 
+  y = mtcars$cyl, 
+  pch = 16,
+  cex = 1.5, 
+  cex.axis = 1.5,
+  cex.lab = 1.5,
+  col = 2, 
+  byt = "n",
+  xlab = "Miles per gallon",
+  ylab = "Cylinder count")
+```
+
+## Columns
+
+::: columns
+::: {.column width="40%"}
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+:::
+
+::: {.column width="60%"}
+```{r}
+#|fig-cap: "An example plot of the `mtcars` data."
+#|fig-asp: 1
+par(bg = NA)
+plot(mtcars$mpg, mtcars$cyl, pch = 16, col = 2)
+```
+:::
+:::
+
+## More Columns
+
+::: columns
+::: {.column width="50%"}
+### Left Column Header
+
+Some column content
+:::
+
+::: {.column width="50%"}
+### Right Column Header
+
+Some column content
+:::
+:::
+
+## Speaker Notes
+
+You can add speaker notes using a div with class `.notes`. For example:
+
+::: notes
+Speaker notes go here. To see them press S or use the navigation menu.
+:::
+
+``` markdown
+You can add speaker notes using a div with class `.notes`. For example: 
+
+::: {.notes}
+Speaker notes go here. To see them press S or use the navigation menu.
+:::
+```
+
+## An example slide with extensive speaker notes
+
+While it is not recommended, you can have extensive notes per slide.
+
+::: notes
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim nulla aliquet porttitor lacus luctus accumsan. Amet mattis vulputate enim nulla aliquet porttitor lacus. Diam in arcu cursus euismod quis viverra. Volutpat lacus laoreet non curabitur gravida arcu. Id diam maecenas ultricies mi eget mauris pharetra et ultrices. Fames ac turpis egestas maecenas pharetra. Gravida rutrum quisque non tellus orci ac auctor augue. Arcu vitae elementum curabitur vitae nunc sed. Vel eros donec ac odio. Ultricies lacus sed turpis tincidunt id. Mattis molestie a iaculis at erat. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Est sit amet facilisis magna etiam tempor orci eu. Odio euismod lacinia at quis.
+
+Turpis egestas sed tempus urna et pharetra. Ligula ullamcorper malesuada proin libero. Mi ipsum faucibus vitae aliquet nec ullamcorper sit. Commodo viverra maecenas accumsan lacus vel facilisis. Sapien nec sagittis aliquam malesuada. Habitant morbi tristique senectus et netus et malesuada fames. Sit amet justo donec enim diam vulputate. Commodo sed egestas egestas fringilla phasellus faucibus. Tristique magna sit amet purus gravida quis blandit turpis. Tellus id interdum velit laoreet id donec ultrices. Gravida neque convallis a cras semper auctor. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Magna eget est lorem ipsum dolor sit amet. In metus vulputate eu scelerisque felis.
+
+Dignissim sodales ut eu sem integer vitae. Tellus orci ac auctor augue. Tincidunt lobortis feugiat vivamus at. Etiam dignissim diam quis enim lobortis scelerisque. Neque laoreet suspendisse interdum consectetur libero. Elementum integer enim neque volutpat ac tincidunt vitae. Purus sit amet luctus venenatis lectus magna fringilla urna porttitor. Aenean et tortor at risus viverra adipiscing at. Tellus cras adipiscing enim eu turpis egestas. Suscipit adipiscing bibendum est ultricies integer quis auctor elit. Sit amet porttitor eget dolor morbi non arcu. Tempor commodo ullamcorper a lacus vestibulum. Urna id volutpat lacus laoreet non curabitur gravida arcu. Lectus quam id leo in vitae. Tincidunt tortor aliquam nulla facilisi.
+
+Duis at tellus at urna condimentum mattis pellentesque id. Tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra. Dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo. Nibh mauris cursus mattis molestie a iaculis at erat pellentesque. Faucibus nisl tincidunt eget nullam non nisi. Pulvinar etiam non quam lacus suspendisse faucibus interdum. A diam sollicitudin tempor id eu nisl nunc mi ipsum. Nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Odio tempor orci dapibus ultrices in iaculis nunc sed augue. Vulputate mi sit amet mauris. Quam vulputate dignissim suspendisse in est ante in nibh. Nisl tincidunt eget nullam non nisi est sit amet.
+
+Feugiat sed lectus vestibulum mattis ullamcorper velit. Orci ac auctor augue mauris augue neque gravida. Odio facilisis mauris sit amet massa. Id eu nisl nunc mi ipsum faucibus vitae aliquet nec. Cras tincidunt lobortis feugiat vivamus at augue. Mollis nunc sed id semper risus in hendrerit gravida. Felis imperdiet proin fermentum leo vel orci porta. Viverra justo nec ultrices dui sapien eget mi proin. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. Et molestie ac feugiat sed lectus vestibulum. Sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu. Nisi porta lorem mollis aliquam ut. Est ante in nibh mauris cursus mattis molestie a. Ac felis donec et odio. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Id nibh tortor id aliquet. Arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc. Blandit aliquam etiam erat velit scelerisque in dictum. Leo vel orci porta non pulvinar neque. Sed risus ultricies tristique nulla aliquet enim tortor.
+:::
+
+## Asides and Footnotes
+
+You can add a footnote to any text.[^1]
+
+[^1]: Yes, really!
+
+This uses the format `^[footnote text]`
+
+</br>
+
+You can also add asides if it is more of a general point. This uses the `aside` div.
+
+``` markdown
+::: aside
+This is a peripheral comment in an aside.
+:::
+```
+
+::: aside
+This is a peripheral comment in an aside.
+:::
+
+## Exporting to PDF {.smaller}
+
+::: {.callout-note collapse="true" appearance="default" icon="true"}
+This is only confirmed on Chrome and Chromium.
+:::
+
+1.  Toggle into print view by pressing `E`
+2.  Open the in-browser print dialog (`cmd` + `p`)
+3.  Change the **destination** setting to **save as PDF**
+4.  Change the **layout** to **landscape**
+5.  Change the **margins** to **none**
+6.  Enable the **background graphics** option
+7.  Click **save** `r emo::ji("popper")`
+
+## Callout blocks - appearance="default" {.smaller .scrollable}
+
+::: {.callout-note collapse="true" appearance="default" icon="true"}
+Note that there are five types of callouts: `note`, `tip`, `warning`, `caution` and `important`.
+:::
+
+::: {.callout-warning collapse="true" appearance="default" icon="true"}
+Callouts provide a simple way to attract attention, for example to this warning.
+:::
+
+::: {.callout-important collapse="true" appearance="default" icon="true"}
+Danger, callouts will really improve your writing.
+:::
+
+::: {.callout-tip collapse="true" appearance="default" icon="true"}
+## Tip with caption
+
+This is an example of a callout with a caption.
+:::
+
+::: callout-caution
+## Expand to learn about collapse
+
+This is an example of a "collapsed" caution callout that can be expanded by the user. You can use `collapse="true"` to callapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
+:::
+
+## Callout blocks - appearance="simple" {.smaller .scrollable}
+
+::: {.callout-note collapse="true" appearance="simple" icon="true"}
+Note that there are five types of callouts: `note`, `tip`, `warning`, `caution` and `important`.
+:::
+
+::: {.callout-warning collapse="true" appearance="simple" icon="true"}
+Callouts provide a simple way to attract attention, for example to this warning.
+:::
+
+::: {.callout-important collapse="true" appearance="simple" icon="true"}
+Danger, callouts will really improve your writing.
+:::
+
+::: {.callout-tip collapse="true" appearance="simple" icon="true"}
+## Tip with caption
+
+This is an example of a callout with a caption.
+:::
+
+::: {.callout-caution appearance="simple"}
+## Expand to learn about collapse
+
+This is an example of a "collapsed" caution callout that can be expanded by the user. You can use `collapse="true"` to callapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
+:::
+
+## Callout blocks - appearance="simple" {.smaller .scrollable}
+
+::: {.callout-note collapse="true" appearance="minimal" icon="true"}
+Note that there are five types of callouts: `note`, `tip`, `warning`, `caution` and `important`.
+:::
+
+::: {.callout-warning collapse="true" appearance="minimal" icon="true"}
+Callouts provide a simple way to attract attention, for example to this warning.
+:::
+
+::: {.callout-important collapse="true" appearance="minimal" icon="true"}
+Danger, callouts will really improve your writing.
+:::
+
+::: {.callout-tip collapse="true" appearance="minimal" icon="true"}
+## Tip with caption
+
+This is an example of a callout with a caption.
+:::
+
+::: {.callout-caution appearance="minimal"}
+## Expand to learn about collapse
+
+This is an example of a "collapsed" caution callout that can be expanded by the user. You can use `collapse="true"` to callapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
+:::
+
+## Appendix Slides {visibility="uncounted"}
+
+To add secret extra slides to the end of your presentation (that don't get counted in the totals) use `{visibility="uncounted"}` after the slide title.
+
+Finally - can you tell these apart? `1Il`?

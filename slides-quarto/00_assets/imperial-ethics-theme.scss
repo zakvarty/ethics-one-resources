@@ -1,0 +1,82 @@
+/*-- scss:defaults --*/
+
+$body-color: #222222; //#5b868d;
+$link-color: #0091D4; //#12a79d;
+$body-bg: #ffffff;
+$code-block-font-size: 0.65em;
+$code-block-bg: #EBEEEE; // Imperial Gray
+$code-block-border-color: #222222;
+$code-color: #C81E78;
+$presentation-h1-font-size: 2.0em;
+$presentation-h2-font-size: 1.7em;
+$presentation-h3-font-size: 1.4em;
+$presentation-h4-font-size: 1.1em;
+$presentation-font-size-root: 28pt;
+$presentation-line-height: 1.5em;
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+h1, h2, h3, h4 {
+  color: #003E74 !important;
+  font-family: 'Lato', 'Lato-Regular', Arial, sans-serif;
+}
+
+p {
+  font-family: 'Lato', 'Lato-Regular', Arial, sans-serif;
+}
+
+b{
+  color: #D84727 !important;
+  font-weight: bolder;
+}
+
+em{
+  color: #D84727 !important;
+  font-style: normal !important;
+  font-weight: bolder;
+}
+
+/*-- scss:rules --*/
+
+.reveal .slide figure > figcaption{
+  font-size: 0.85em;
+}
+.reveal .footer {
+  color: #003E74;
+  font-family: 'Lato', 'Lato-Regular', Arial, sans-serif;
+  padding-bottom: 10px;
+}
+
+.reveal .slide-logo {
+  right: 12px;
+  bottom: 10px !important;
+  max-height: 60px !important;
+  border-radius: 3% !important;
+}
+
+.reveal .slide-menu-button {
+    //left: 10px;
+    //bottom: 10px;
+    //padding-left: 20px;
+    padding-bottom: 10px;
+    color: #003E74;
+  }
+
+.reveal .slide-chalkboard-buttons {
+    //left: 10px;
+    //bottom: 10px;
+    //padding-left: 10px;
+    padding-bottom: 10px;
+    color: #003E74;
+  }
+
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: #003E74;
+  height: 2%;
+}
+
+.code_class {
+height: 700px;
+width: 1200px;
+}

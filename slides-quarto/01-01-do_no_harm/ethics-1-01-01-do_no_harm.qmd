@@ -1,0 +1,285 @@
+---
+title: "Lecture 1.1: Do No Harm"
+subtitle: "Week 1 - Fundamentals of Ethical AI."
+author: Dr Zak Varty
+date: ""
+editor: source
+format:
+  revealjs:
+    theme: ../00_assets/imperial-ethics-theme.scss #(default / dark / simple)
+    logo: ../00_assets/ethics-1-logo.jpg
+    bibliography: ../00_assets/refs.bib
+    footer: "MLDS Ethics, Part 1 - Zak Varty"
+    menu: true
+    slide-number: true
+    show-slide-number: all # (all / print / speaker)
+    self-contained: true # (set to true before publishing html to web)
+    chalkboard: false # (conflicts with self-contained)
+      #src: drawings.json
+      #theme: whiteboard
+      #read-only: true
+      #buttons: false
+    width: 1600 # default is 1050
+    height: 900 # default is 700
+---
+
+## AI is wonderful at Go
+
+\
+\
+
+::: {#fig-go layout-ncol="2"}
+<img src="images/alpha_go.jpeg" alt="Two children playing the boardgame 'Go'." width="95%">
+
+
+<img src="images/aplha_go_2.jpeg" alt="An AI plays the world champion the boardgame 'Go'." width="95%">
+
+
+Two children play the boardgame Go (Left), while AlphaGo beats the world champion human player (Right).
+:::
+
+## AI is wonderful with proteins {.nostretch}
+\
+
+::: {#fig-protein}
+<img src="images/protein-folding.gif" alt="Spinning protein molecules" width="65%">
+
+Deep Mind proposes solutions to 5-year-old protein folding problem
+:::
+
+## AI is wonderful with heart conditions {.nostretch}
+\
+
+::: {#fig-heart-conditons}
+<img src="images/nature-cardiology.png" alt="Nature article on using neural networks to detect heart arrhythmia." width="60%">
+
+Neural Networks used to detect arrhythmia from an ECG.
+:::
+
+## AI can cause harm: when driving 
+
+::: {#fig-cars layout-ncol="2"}
+<img src="images/bbc-self-driving_1.png" alt="BBC article with headline 'Uber's self-driving operator charged over fatal crash'" width="85%">
+
+<img src="images/bbc-self-driving-2.png" alt="BBC article with headline 'Tesla: Elon Musk suggests Autopilot not to blame for fatal crash'" width="85%">
+
+
+Self-driving cars present a risk of physical harm (BBC News)
+:::
+
+## AI can cause harm when identifying people
+\
+
+::: {#fig-facial layout-ncol="2"}
+
+<img src="images/bbc-facebook.png" alt="BBC article with headline 'Facebook apology as AI labels black men primates'" width="85%">
+
+<img src="images/bbc-facial-recognition.png" alt="BBC article with headline 'Facial recognition fails on race, government study finds'" width="85%">
+
+Racial bias in facial recognition systems (BBC News)
+:::
+
+## Technological adoption relies on public trust {.nostretch}
+
+</br>
+
+::: {#fig-public-trust}
+![](images/getty-einstein-nuclear.png){width="60%"}
+
+Einstein, initially in favour of the creation of an atomic bomb, later became vehemently opposed to the proliferation of nuclear arms.
+:::
+
+## Technological adoption relies on public trust {.nostretch}
+
+</br>
+
+::: {#fig:nuclear layout-ncol="2"}
+```{r, out.width="46%", fig.cap= "The Chernobyl nuclear reactor (Associated Press)", fig.align='left'}
+knitr::include_graphics("images/chernobyl.jpg")
+```
+
+```{r, out.width="80%", fig.cap= "The Fukushima nuclear accident (BBC News)", fig.align='left'}
+knitr::include_graphics("images/fukushima.png")
+```
+:::
+
+## Technological adoption relies on public trust
+
+::: columns
+::: {.column width="60%"}
+\
+
+```{r, out.width="50%", fig.cap="Figure: The onset of big data ~2014 has ushered in a new era of data science."}
+knitr::include_graphics("images/wired-data.png")
+```
+:::
+
+::: {.column width="40%"}
+
+-   DS, ML and AI are now ubiquitous tools that are transforming social, economic and political decision making.
+
+\
+
+-   Without specialised training, these are often too complex to understand fully.
+
+\
+
+-   With that understanding comes a responsibility to others.
+
+:::
+:::
+
+## Technological adoption relies on public trust 
+
+::: columns 
+::: {.column width="60%"}
+\
+
+Many other professions carry a similar *burden of responsibility*, abide by strict *codes of conduct* and are *legally liable* for the outcomes of their work: 
+
+\
+
+- Doctors;
+- Pharmaceutical companies;
+- Lawyers;
+- Safety-critical systems engineers;
+- ...
+:::
+::: {.column width="40%"}
+\
+
+::: {#fig-bridge}
+```{r, out.width="80%", fig.alt="Collapsed bridge on interstate 35W", fig.align='center'}
+knitr::include_graphics("images/collapsed-bridge.png")
+```
+
+Thirteen people were killed and 145 injured during the interstate 35W bridge collapse in 2007.
+:::
+:::
+:::
+
+
+## The Hippocratic Oath 
+
+
+:::: columns
+
+::: {.column width="50%"}
+::: {#fig-hippocrates}
+<p style="text-align:center;">
+<img src="images/hippocrates.png" alt="Sketched marble bust of Hippocrates" width="60%">
+</p>
+
+Sketched marble bust of Hippocrates of Kos (~ 460-370 BCE).
+:::
+:::
+
+::: {.column width="50%"}
+::: {.callout collapse="true" appearance="default" icon="false"}
+### Do No Harm 
+Doctors around the world swear a version of the <em>Hippocratic oath</em>, originating in 400BCE, which introduced the principles of medical confidentiality and non-maleficence.
+:::
+
+\
+\
+
+::: {.callout collapse="true" appearance="default" icon="false"}
+## Corporate Oaths
+Google's original internal code of conduct started with the phrase **"Don't be evil"**. This was later rephrased to _"You can still make money without being evil"_.
+:::
+:::
+
+::::
+
+
+## A Hippocratic Oath for Data Scientists 
+\
+
+::: {#fig-wired-hippocratic}
+<p style="text-align:center;">
+<img src="images/wired-hippocratic.png" alt="Screenshot of Wired aricle proposing a Hippocratic oath for data scientists." width="80%">
+</p>
+
+In Weapons of Math Destruction [@ONeil2016weapons], Cathy O'Neil was among the first authors to make a call for a Hippocratic oath for data scientists.
+:::
+
+## Doing the right thing is neither obvious nor easy. 
+
+\
+
+- Lack of context of poor understanding of the group at risk.
+- Cognitive biases or bad habits. 
+- Inappropriate incentive structures.
+- Inherent trade-offs (moral dilemmas).
+- Defeatism. 
+- Unanticipated consequences. 
+
+
+::: {.callout}
+## What is the right thing to do? 
+We will not attempt to define _what is right_, since this is not a moral philosophy course. Instead, we consider what to do with a given definition of what is right.
+:::
+
+## Hope for the best, plan for the worst 
+
+:::: columns 
+
+:::{.column width="50%"}
+::: {.callout-warning}
+## Prevalent Mindset
+1. Success stories
+2. Access to data
+3. Do good, not evil
+4. Someone else will fix it
+5. Unsolvable dilemma
+6. Safe if used properly
+7. Technology will fix everything
+8. Only monitor model performance
+9. Keep it between the engineers
+:::
+:::
+
+:::{.column width="50%"}
+::: {.callout-tip}
+## Target Mindset
+1. Near misses, anticipate harm
+2. Permission to use data
+3. Do the best you can, minimise risk
+4. You hold the bar
+5. Explicit trade-offs
+6. How could this be abused?
+7. Pragmatism and humility
+8. Monitor everything that we care about
+9. Engage with broader society
+:::
+:::
+::::
+
+## Wrapping up 
+\
+\
+
+:::: columns
+
+:::{.column width="50%"}
+### Summary 
+
+- With power comes responsibility;
+- **You** are best placed to drive positive change;
+- Anticipate, minimise and communicate;
+- Human-centred design;
+- You can't fix everything.
+:::
+
+:::{.column width="50%"}
+### Coming up: 
+
+- What are we talking about, really?
+- What progress has been made?
+- What principles should guide the design of ethical AI?
+:::
+
+::::
+
+## References {visibility="uncounted"}
+
