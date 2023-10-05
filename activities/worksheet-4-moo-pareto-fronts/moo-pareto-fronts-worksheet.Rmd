@@ -1,0 +1,83 @@
+---
+title: MATH70098 Ethics in Data Science and AI
+subtitle: Exercise Sheet - Multi-objective optimisation and Pareto Fronts 
+author: Zak Varty
+#date: Autumn 2021
+output: 
+  pdf_document:
+    pandoc_args: ["--lua-filter=color-text.lua"]
+  html_document:
+    pandoc_args: ["--lua-filter=color-text.lua"]
+---
+# Exercise sheet: Multi-objective optimisation and Pareto Fronts
+
+The questions on this sheet are designed to let you test your own understanding of the course content on multi-objective optimisation and Pareto fronts. Some questions will test basic notions, while others will encourage you to think more deeply about some of the concepts introduced this week. 
+
+--------------------------------------------------------------
+```{r set-up, include=FALSE}
+
+```
+__Q1: Wiki contributions__ 
+
+The Wikipedia article on [multi-objective optimisation](https://en.wikipedia.org/wiki/Multi-objective_optimization) provides a brief but comprehensive introduction to the topic. The ["Examples of applications" section](https://en.wikipedia.org/wiki/Multi-objective_optimization#Examples_of_applications) of this page lists application areas for multi-objective optimisation including economics, finance and optimal design. Along with each example application is a short one or two paragraph explanation of how multi-objective optimisation can be used in that area. Ethical AI is not currently on this list.
+
+Write one to two paragraphs, in language suitable for this format, describing how multi-objective optimisation may be applied in the context of ethical AI. 
+
+--------------------------------------------------------------
+
+__Q2: Formal definitions of a Pareto-optimal and a dominated solution__
+
+Formally define and explain in plain language what is meant by a dominated and a Pareto-optimal solution to the multi-objective optimisation problem: 
+
+$$ \max_{x = (x_1,\ldots, x_n) \in X} g( f_1(x), f_2(x), \ldots f_k(x)) \text{ s.t. } x\in \mathcal{X}.$$
+
+
+______________________________________________________________
+
+__Q3: A concrete example__
+
+Consider the size classifiers given in the table below. 
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE}
+library(gridExtra)
+set.seed(1234)
+example_df <- dplyr::tibble(
+classifier = LETTERS[1:6],
+k_anon = c(2,4,3,5,3,2), 
+equalised_odds = c(F,T,T,F,T,T),
+error_rate = c(0.11, 0.13, 0.05, 0.20, 0.13, 0.08),
+false_positive_rate = round(runif(6) + c(0.4,-0.4,0,-0.45,0,0), 2)
+)
+
+grid.table(example_df)
+```
+
+ 
+(i) Consider the four pairs of objectives given below. Visualise the the bi-objective performance of the six classifiers for each of these pairs. Identify which classifiers are Pareto-optimal and which are dominated in each case.  
+
+(a) false positive rate vs error rate,
+(b) k-anonymity vs equalised odds,
+(c) k-anonymity vs error rate,
+(d) Equalised odds vs error rate. 
+
+(ii) When considering all four objectives at once, which (if any) of the classifiers are Pareto optimal? 
+
+
+-------------------------------------------------------------------------
+__Q4: Scalarisation__  
+
+(a) Define in your own words what it means to scalarise a multi-objective optimisation problem. 
+
+(b) Linearisation and epsilon-constraint are two methods of linearisation. Explain in plain language how each method works. 
+
+(c) Give linearised and epsilon-constrained formulations for the multi-objective optimisation in Question 2.
+
+
+
+
+
+
+
+
+
+

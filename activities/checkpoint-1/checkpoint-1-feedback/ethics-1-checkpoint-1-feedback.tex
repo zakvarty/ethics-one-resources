@@ -1,0 +1,170 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PREAMBLE
+
+\documentclass[a4paper, 11pt]{article}
+
+% General document formatting
+\usepackage[margin=0.7in]{geometry}
+\usepackage[parfill]{parskip}
+\usepackage[utf8]{inputenc}
+
+% Figures
+\usepackage{graphicx}
+\usepackage[section]{placeins} 
+% References 
+\usepackage[authoryear,round]{natbib}
+    
+% Related to math
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+
+% Author details
+\title{Ethics Assessment 1: Feedback}
+\author{Zak Varty}
+\date{\today}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+
+\section{Understanding of material }
+
+Overall I was very pleased with the level of mastery you have shown over these complex topics. 
+
+\subsection*{Question 1:}
+
+Generally this question was done very well. The majority of people interpreted this question correctly, but a few people went awry by considering all columns as protected variables rather than only the spend value. This led to people creating aggregated versions of this variable, rather than deducing the level of k-anonymity in the remaining columns. 
+
+\subsection*{Question 2:}
+
+Again, this question was frequently answered very well. Common errors here included: 
+\begin{itemize}
+    \item constructing a probability tree with two rather than three 'layers';
+    \item not defining notation used in the probability tree / other parts of the solution;  
+    \item not using words to justify the steps when manipulating probabilities;
+    \item giving only a point estimate in (g) without interpreting this value in context.
+\end{itemize}
+
+
+You coped very well with the method of moments component of this question, which I am particularly pleased about.  
+
+ \subsection*{Question 3:}  
+The final question was answered very well by many people. There were a few exceptionally responses to this question showing good use of references both to the Floridi paper and to other texts. 
+Marks were often lost on this question by using a term within its own definition. E.g. using the word "Justice" to describe what the principle of justice means.
+
+A few people did not follow the principles of Floridi, as specified in the question, but used the principles as in the lectures. The mapping between these principles is not bijective and so this led to some marks being lost. 
+
+\subsection{Estimators vs Estimates:}
+There was some confusion in both notation and terminology about the difference between population parameter $p$, an estimator of that parameter $\hat Y$ and an estimate of that parameter $\hat y$.
+
+An estimator is a function of a generic data set, $\hat Y = f(X)$ and is therefore a random variable (hence the capitalisation). An estimate is a function of a particular realisation of the data $\hat y = f(x)$. The estimate is therefore a random variate from the estimator random variable(and hence is denoted in lower case).
+
+\section{Presentation and write-up}
+
+The assessment instructions asked for solutions to be understandable as a stand-alone document. You must introduce and properly define all notation that you use so that your solution can be understood without the question sheet. You should also make sure to interpret the solutions that you find in the context of the question being asked. 
+
+Similarly, when working at a post-graduate level you should be using text to justify and explain the steps of your working. It is not acceptable at this level to present a sequence of mathematical statements and expect the reader to construct these into an argument. A good rule of thumb here is to read aloud what is written on the page; 
+this should form a coherent argument for a listener. 
+
+
+\subsection{Formatting and useful LaTeX commands}
+
+\begin{itemize}
+    \item You solutions should be written in full sentences, including any math. As such, displayed equations should be followed by punctuation and flow with the text.  
+    \item Only number equations that you then reference in the text. In LaTeX, equation numbers can be removed using the \verb|*| appendix e.g. \verb|\begin{equation*}|  or \verb|begin{align*}|, rather than \texttt{equation}, \texttt{align} or dollar syntax.  
+    \item The align environment allows you to arrange equations over multiple lines within the same displayed math environment. By default every line will be numbered, but these can be removed individually using the \verb|\nonumber| command.   
+    \item When typesetting, text and special characters should not be in math mode. There are LaTeX commands for common operations, otherwise you can use the \verb|\text{}| or \verb|\mbox{}| environments to achieve this.  
+    \item  Finally, when typesetting brackets, these should be large enough to enclose the full expression. In LaTeX, this can be done using the \verb|\left|and \verb|\right| commands before each bracket.  
+    
+\end{itemize}
+You solutions should be written in full sentences, including any math. As such, displayed equations should be followed by punctuation and flow with the text. 
+
+\subsection{Examples}
+
+To put these suggestions into context, I offer two short examples below. 
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\textbf{A bad inline math example} 
+
+\verb|$ max_x Pr(X < x) where X \sim Bernoulli(p) $|
+
+$ max_x Pr(X < x) where X \sim Bernoulli(p) $
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\textbf{A better inline math examples:}
+
+\verb|Consider $\max_{x} \Pr( X < x) \text{, where } X \sim \text{ Bernoulli } (p)$.|
+
+\verb|Consider $ \max_{x} \Pr( X < x)$, where $X \sim \text{ Bernoulli } (p)$.|
+
+Consider $ \max_{x} \Pr( X < x)$, where $X \sim \text{ Bernoulli } (p)$.
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\textbf{A bad  displayed math example:}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\begin{verbatim}
+Volume of sylo
+
+$$  4/3 * \pi * r^3 + h * \pi * r ^2 $$
+\end{verbatim}
+
+Volume of sylo
+
+$$  4/3 * \pi * r^3 + h * \pi * r ^2 $$ 
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\textbf{A better displayed math example:}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\begin{verbatim}
+The volume of a cylinder of radius $r$ and length $h$, with a hemisphere added to 
+each end is given by: 
+%
+ \begin{align} \label{eqn:sylo_volume}
+    &2 \left( \frac{1}{2} \frac{4}{3} \pi r ^3 \right) + \pi r^2 h \nonumber \\
+    &= 2 \pi r^2 \left(\frac{4}{3} r + h \right). %\label{eqn:sylo_volume}
+ \end{align}
+%
+Equation \eqref{eqn:sylo_volume} allows us to calculate the volume of any sylo with
+this shape.  
+\end{verbatim}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+The volume of a cylinder of radius $r$ and length $h$, with a hemisphere added to each end is given by: 
+%
+\begin{align} \label{eqn:sylo_volume}
+    &2 \left( \frac{1}{2} \frac{4}{3} \pi r ^3 \right) + \pi r^2 h \nonumber \\
+    &= 2 \pi r^2 \left(\frac{4}{3} r + h \right). %\label{eqn:sylo_volume}
+\end{align}
+%
+Equation \eqref{eqn:sylo_volume} allows us to calculate the volume of any sylo with this shape. 
+
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\hfill \textit{End of document.}
+\end{document}
