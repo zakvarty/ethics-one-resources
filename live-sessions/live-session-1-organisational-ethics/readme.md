@@ -1,6 +1,6 @@
 ## Live Session Outline 
 
-![](live-session-1-organisational-ethics.pdf)
+![](readme-preview-image.png)
 
 - Introductions and expectations for live sessions / office hours. (10 mins)
 - Activity: Group discussion of ethical guidelines provided by various organistions. (20 mins)
