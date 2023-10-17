@@ -1,0 +1,298 @@
+---
+title: "Live Session 1: Organisational Ethics"
+subtitle: "Session will begin at 16:00"
+author: Dr Zak Varty
+editor: source
+format:
+  revealjs:
+    theme: imperial-ethics-theme.scss #(default / dark / simple)
+    logo: assets/ethics-1-logo.jpg
+    bibliography: assets/refs.bib
+    footer: "MLDS Ethics, Part 1 - Zak Varty"
+    menu: true
+    slide-number: true
+    show-slide-number: all # (all / print / speaker)
+    self-contained: true # (set to true before publishing html to web)
+    chalkboard: false # (conflicts with self-contained)
+      #src: drawings.json
+      #theme: whiteboard
+      #read-only: true
+      #buttons: false
+    width: 1600 # default is 1050
+    height: 900 # default is 700
+---
+
+## Welcome!
+
+### This Session: 
+
+1. Introductions and Expectations (10 mins)
+
+<br>
+
+2. Activity: Organisational Ethics (20 mins)
+
+<br>
+
+3. Feedback from groups (20 mins)
+
+<br>
+
+4. Making information palatable (5 mins, optional)
+
+
+# Introductions and Expectations 
+
+--------------------------------------------------------------------------------
+
+## Session Descriptions and Expectations
+
+<br>
+
+- **Live Sessions:** Activities and group discussions to support your learning of the weekly material. Recorded for those who cannot attend live, but better to attend if you can [(Deslauriers et al 2019)](https://www.pnas.org/doi/10.1073/pnas.1821936116).
+
+<br>
+
+- **Office Hours:** Drop-in and out as needed, informal Q&A and group discussion.
+
+<br>
+
+- **Expectations:** Respectful, open discussion with closed circulation.
+
+## About Me - Zak Varty
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+<br>
+<br>
+
+- Teaching Fellow in Statistics
+
+<br>
+
+- Environmental and Industrial Statistics
+
+<br>
+
+- Earthquakes, Point Processes, Extreme Value Theory
+
+:::
+
+::: {.column width="40%"}
+<br>
+<p style="text-align:center;">
+<img src="images/zv_270_270.jpg" alt="Headshot of Zak Varty" width="80%">
+</p>
+
+:::
+
+::::
+
+--------------------------------------------------------------------------------
+
+## About you
+
+:::: {.columns}
+
+::: {.column width="40%"}
+<br>
+<br>
+<br>
+<p style="text-align:center;">
+<img src="images/silhouette.jpg" alt="An anonymous silhouette" width="95%">
+</p>
+:::
+
+::: {.column width="60%"}
+
+<br>
+<br>
+
+- What is your MLDS background?
+
+<br>
+
+- What do you get up to outside of work?
+
+<br>
+
+- What are you excited / nervous about in the ethics course?
+
+:::
+
+::::
+
+# Activity: Organisational Ethics (20 mins) 
+
+--------------------------------------------------------------------------------
+
+## Ethical Frameworks - 5 Principles
+
+<p style="text-align:center;">
+<img 
+  src="images/floridi-and-cowls.jpg" 
+  alt="Title section of the paper by Floridi and Cowls (2019), 
+      A Unified Framework of Five Principles for AI in Society." 
+  width="70%"
+>
+</p>
+
+<p style="text-align:center;">
+Beneficence, Non-maleficence, Autonomy, Justice, Explainability. 
+</p> 
+
+--------------------------------------------------------------------------------
+
+## Ethical Frameworks - Organisational Ethics
+
+<p style="text-align:center;">
+<img src="images/professional-guidelines.jpg" width="80%" alt="Title pages from codes of conduct relating to data ethics from the European Union, American Mathematical Society, Royal Statistical Society and UK government.">
+</p>
+
+
+--------------------------------------------------------------------------------
+
+## Activity - Organisational Ethics
+
+<br>
+
+We will break into groups for **20 minutes** to discuss the published guidance on DS / AI from four organisations. 
+
+<br>
+
+Questions you might try to answer: 
+
+- Who is the intended audience for your document?
+- How do the published guidelines link to the guidelines of Floridi and Cowls?
+- How effectively does the document achieve its goal?
+- What would you change or do differently?
+
+# Feedback from Groups (20 mins)
+
+--------------------------------------------------------------------------------
+
+## Group 1
+
+<br>
+
+**The European Union**
+
+<br>
+
+Questions you might try to answer: 
+
+- Who is the intended audience for your document?
+- How do the published guidelines link to the guidelines of Floridi and Cowls?
+- How effectively does the document achieve its goal?
+- What would you change or do differently?
+
+```{r}
+countdown::countdown(4)
+```
+
+--------------------------------------------------------------------------------
+
+## Group 2
+
+<br>
+
+**The Royal Statistical Society**
+
+<br>
+
+Questions you might try to answer: 
+
+- Who is the intended audience for your document?
+- How do the published guidelines link to the guidelines of Floridi and Cowls?
+- How effectively does the document achieve its goal?
+- What would you change or do differently?
+
+```{r}
+countdown::countdown(4)
+```
+
+--------------------------------------------------------------------------------
+
+## Group 3
+
+<br>
+
+**The Dutch Government**
+
+<br>
+
+Questions you might try to answer: 
+
+- Who is the intended audience for your document?
+- How do the published guidelines link to the guidelines of Floridi and Cowls?
+- How effectively does the document achieve its goal?
+- What would you change or do differently?
+
+```{r}
+countdown::countdown(4)
+``` 
+
+--------------------------------------------------------------------------------
+
+## Group 4
+
+<br>
+
+**The UK Government**
+
+<br>
+
+Questions you might try to answer: 
+
+- Who is the intended audience for your document?
+- How do the published guidelines link to the guidelines of Floridi and Cowls?
+- How effectively does the document achieve its goal?
+- What would you change or do differently?
+
+```{r}
+countdown::countdown(4)
+``` 
+
+--------------------------------------------------------------------------------
+
+## Group 5
+
+<br>
+
+**The American Mathematical Society**
+
+<br>
+
+Questions you might try to answer: 
+
+- Who is the intended audience for your document?
+- How do the published guidelines link to the guidelines of Floridi and Cowls?
+- How effectively does the document achieve its goal?
+- What would you change or do differently?
+
+```{r}
+countdown::countdown(4)
+``` 
+
+# Making Information Palatable (5 mins)
+
+--------------------------------------------------------------------------------
+
+## Form as well as function? 
+
+<br>
+
+In the final few minutes, discuss the documents themselves (rather than their content).
+
+How might the delivery of information impact on how it is recieved / acted upon? 
+
+<br>
+
+- How important is length?
+- How important is presentation?
+- Does your organisation have a similar document? 
+- How does it compare?
+
+
