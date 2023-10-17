@@ -1,6 +1,8 @@
-## Live Session Outline 
+# Ethics Part 1, Live Session 1: Organisational Ethics
 
 ![](readme-preview-image.png)
+
+## Session Outline 
 
 - Introductions and expectations for live sessions / office hours. (10 mins)
 - Activity: Group discussion of ethical guidelines provided by various organistions. (20 mins)
