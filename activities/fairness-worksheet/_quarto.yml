@@ -1,0 +1,13 @@
+title: "Fairness Worksheet"
+author: "Zak Varty"
+profile:
+  default: questions
+format:
+  html:
+    toc: true
+    self-contained: true
+  pdf: default
+format-links: true        # Add link in HTML doc to view PDF
+
+
+
