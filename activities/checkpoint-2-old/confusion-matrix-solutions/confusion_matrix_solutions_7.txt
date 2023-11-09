@@ -1,0 +1,106 @@
+PART A: CONFUSION MATRICES ----------------------------------------------
+
+Current Test 
+          test_pos test_neg
+repaid         348       87
+defaulted       14      103
+
+New Test 1 
+          test_pos test_neg
+repaid         390       45
+defaulted        6      111
+
+New Test 2 
+          test_pos test_neg
+repaid         387       48
+defaulted        7      110
+
+PART B: TPRs and FPRs -------------------------------------------------
+
+  test       TPR        FPR  distance
+1    0 0.8000000 0.11965812 0.2330624
+2    1 0.8965517 0.05128205 0.1154617
+3    2 0.8896552 0.05982906 0.1255209
+
+ Preferred test is 1 (assuming equal treatment of type 1 and 2 errors).
+ 
+PART C: TPRs and FPRs by sex-------------------------------------------
+
+TEST PERFORMANCE ON MALES: 
+  test       TPR        FPR   distance
+1    0 0.7848837 0.13829787 0.25573681
+2    1 0.8953488 0.04255319 0.11297185
+3    2 0.9825581 0.06382979 0.06616993
+
+ Preferred test is 2 (assuming equal treatment of type 1 and 2 errors).
+ ------------------------------------ 
+TEST PERFORMANCE ON NON-MALES: 
+  test       TPR        FPR  distance
+1    0 0.8098859 0.04347826 0.1950224
+2    1 0.8973384 0.08695652 0.1345394
+3    2 0.8288973 0.04347826 0.1765403
+
+ Preferred test is 1 (assuming equal treatment of type 1 and 2 errors).
+ ------------------------------------ 
+
+PART D: Fairness metrics ----------------------------------------------
+
+
+      _Error parity:_ Males and non-males should be mis-classified with the same 
+	
+      probability/proportion. Mis-classification occurs here when someone would 
+	
+      have repaid a loan they were not given or else failed to repay a loan that 
+	
+      they were given. 
+
+	 [ ] Definition 
+	 [ ] Context
+ 
+
+
+      _Equalised odds:_ The probability of correctly accepting or rejecting the 
+
+      loan application should be the same, regardless of gender.  
+
+	
+      	 This requires BOTH of the following: 
+	
+      	 Pr(Accepted | repaid & male) = Pr(Accepted | repaid & not male) 
+	
+      			 AND 
+
+      	 Pr(Rejected | defaulted & male) = Pr(Rejected | defaulted & not male).
+     
+
+	 [ ] Definition 
+	 [ ] Context
+ 
+
+
+      _Equalised opportunity:_ This is a weaker version of equalised odds. 
+	
+      The probability of correctly accepting loan application should be the same 
+	
+      for those who will repay the loan, regardless of gender. This requires ONLY: 
+	
+      	 Pr(Accepted | repaid & male) = Pr(Accepted | repaid & not male). 
+	 [ ] Definition 
+	 [ ] Context
+ 
+
+PART E: Error rates by sex --------------------------------------------
+
+  test male_error_rate female_error_rate relative_error_rate
+1    0      0.18796992         0.1783217           0.9486713
+2    1      0.08270677         0.1013986           1.2260013
+3    2      0.03383459         0.1608392           4.7536908
+
+  [ ] Tests 0 and 1 appear to satisfy error parity since relative error rate approx 1. 
+
+  [ ] Test 2 has a much higher error rate for people who are not male. 
+
+  [ ] Formally, we should use a hypothesis test to account for sampling variability 
+ 	 in the proportion of misclassified individuals.
+
+ EOF ---
