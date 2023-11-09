@@ -53,11 +53,11 @@ How do the positive predictive value and negative predictive value relate to the
 :::{.callout-tip title="Solution 2"}
 The positive predictive value is the the proportion of people who have a positive test result that have truly got Coeliac disease:
 
-$$\text{PPV} = \Pr(D = 1 | Y = 1) \approx \frac{\sum_{i=1}^n \mathbb{I}\{ D_{1,i}  = 1\ \& \ Y_i = 1\}}{\sum_{i=1}^n \mathbb{I}\{Y_i = 1\}}.$$
+$$\text{PPV} = \Pr(Y = 1 | D = 1) \approx \frac{\sum_{i=1}^n \mathbb{I}\{ D_{1,i}  = 1\ \& \ Y_i = 1\}}{\sum_{i=1}^n \mathbb{I}\{D_i = 1\}}.$$
 
 The negative predictive value is the the proportion of people who have a negative test result that truly have not got Coeliac disease: 
 
-$$ \text{NPV} = \Pr(D = 0 | Y = 0) \approx \frac{\sum_{i=1}^n \mathbb{I}\{ D_{1,i} = 0\ \& \ Y_i = 0\}}{\sum_{i=1}^n \mathbb{I}\{Y_i = 0\}}.$$
+$$ \text{NPV} = \Pr(Y = 0 | D = 0) \approx \frac{\sum_{i=1}^n \mathbb{I}\{ D_{1,i} = 0\ \& \ Y_i = 0\}}{\sum_{i=1}^n \mathbb{I}\{D_i = 0\}}.$$
 
 The positive and negative predictive values are complementary measures to the TPR and TNR, where the order of conditioning has been reversed.
 :::
