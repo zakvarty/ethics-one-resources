@@ -1,0 +1,215 @@
+---
+title: "Live Session 4: Value Alignment and Control"
+subtitle: "Session will begin at 10:00"
+author: Dr Zak Varty
+editor: source
+format:
+  revealjs:
+    theme: imperial-ethics-theme.scss #(default / dark / simple)
+    logo: assets/ethics-1-logo.jpg
+    bibliography: assets/refs.bib
+    footer: "MLDS Ethics, Part 1 - Zak Varty"
+    menu: true
+    slide-number: true
+    show-slide-number: all # (all / print / speaker)
+    self-contained: true # (set to true before publishing html to web)
+    chalkboard: false # (conflicts with self-contained)
+      #src: drawings.json
+      #theme: whiteboard
+      #read-only: true
+      #buttons: false
+    width: 1600 # default is 1050
+    height: 900 # default is 700
+---
+
+## Welcome!
+
+### This Session: 
+
+1. Moral Machine Experiment (10 mins)
+
+<br>
+
+2. Activity: Group Discussion (20 mins)
+
+<br>
+
+3. Feedback from groups (20 mins)
+
+<br>
+
+
+# Moral Machine Experiment 
+
+## This week's reading
+
+What did you find most interesting? Did anything Surprise you?
+
+![](moral-machine-experiment-paper.png)
+
+
+
+## Did anyone try it for themselves?
+
+![](moral-machine-experiment-website.png)
+
+
+# Activity: Group Discussion (20 mins) 
+
+--------------------------------------------------------------------------------
+
+## Discussion Point 1
+
+<br>
+
+Focus on the Figure in Awad et al that corresponds to your breakout room number.
+
+<br>
+
+  - What does this figure show? 
+  - How does it support the arguments being made? 
+  - How might you modify this figure if you were to make it yourself?
+
+
+--------------------------------------------------------------------------------
+
+## Discussion Point 2
+
+<br>
+
+> "this apparent preference for inequality is driven by the specific ‘trolley-type’ paradigm used by the MME"
+>
+> - Bigman et al.
+
+<br>
+
+ One example would be a trolley problem where the runaway trolley is currently on track to kill five people, but we can redirect it to kill only one person. Alternatively, this could be framed as killing one healthy person so that their organs could save five people who are terminally ill. 
+
+  - Would you make the same decision in each of these cases?
+  - Can you construct your own example like this?
+
+
+# Feedback from Groups (20 mins)
+
+--------------------------------------------------------------------------------
+
+## Group 1
+
+:::: {.columns}
+::: {.column width="40%"}
+![](moral-machine-figure-1.png)
+:::
+::: {.column width="5%"}
+:::
+::: {.column width="55%"}
+<br>
+
+- What does it show
+- Supporting argument
+- Modifications
+
+<br>
+
+- Trolley vs Non-trolley
+- Your Example
+
+```{r}
+countdown::countdown(5)
+```
+
+:::
+::::
+
+
+--------------------------------------------------------------------------------
+
+## Group 2
+
+:::: {.columns}
+::: {.column width="60%"}
+<br>
+<br>
+<br>
+![](moral-machine-figure-2.png)
+:::
+::: {.column width="5%"}
+:::
+::: {.column width="35%"}
+<br>
+
+- What does it show
+- Supporting argument
+- Modifications
+
+<br>
+
+- Trolley vs Non-trolley
+- Your Example
+
+```{r}
+countdown::countdown(5)
+```
+:::
+::::
+
+--------------------------------------------------------------------------------
+
+## Group 3
+
+:::: {.columns}
+::: {.column width="40%"}
+![](moral-machine-figure-3.png)
+:::
+::: {.column width="15%"}
+:::
+::: {.column width="35%"}
+<br>
+
+- What does it show
+- Supporting argument
+- Modifications
+
+<br>
+
+- Trolley vs Non-trolley
+- Your Example
+
+```{r}
+countdown::countdown(5)
+```
+
+:::
+::::
+
+--------------------------------------------------------------------------------
+
+## Group 4
+
+:::: {.columns}
+::: {.column width="50%"}
+![](moral-machine-figure-4.png)
+:::
+::: {.column width="5%"}
+:::
+::: {.column width="45%"}
+<br>
+
+- What does it show
+- Supporting argument
+- Modifications
+
+<br>
+
+- Trolley vs Non-trolley
+- Your Example
+
+```{r}
+countdown::countdown(5)
+```
+
+:::
+::::
+
+
+
+
