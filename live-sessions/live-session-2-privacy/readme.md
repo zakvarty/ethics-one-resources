@@ -1,6 +1,6 @@
 # Ethics Part 1, Live Session 2: Privacy
 
-![](readme-preview-image.png)
+![](assets/readme-preview-image.png)
 
 ## Session Outline 
 
