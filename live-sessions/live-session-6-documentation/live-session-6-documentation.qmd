@@ -1,0 +1,149 @@
+---
+title: "Live Session 6: Safety, Security and Accountability"
+subtitle: "Session will begin at 10:00"
+author: Dr Zak Varty
+editor: source
+format:
+  revealjs:
+    theme: imperial-ethics-theme.scss #(default / dark / simple)
+    logo: assets/ethics-1-logo.jpg
+    bibliography: assets/refs.bib
+    footer: "MLDS Ethics, Part 1 - Zak Varty"
+    menu: true
+    slide-number: true
+    show-slide-number: all # (all / print / speaker)
+    self-contained: true # (set to true before publishing html to web)
+    chalkboard: false # (conflicts with self-contained)
+      #src: drawings.json
+      #theme: whiteboard
+      #read-only: true
+      #buttons: false
+    width: 1600 # default is 1050
+    height: 900 # default is 700
+---
+
+## Welcome!
+
+<br>
+
+### This Session: 
+
+<br>
+
+1. Review and Teasers (5-10 mins)
+
+<br>
+
+2. Group Activity - Writing Model Cards & Feedback from Groups (15 mins + 10 mins)
+
+
+<br>
+
+3. Comparison to Example and Templates & Feedback from Groups (15 mins + 10 mins)
+
+
+# Review and Teasers 
+
+## Review 
+
+When putting models into prodution there are a lot of challenges to overcome: 
+
+- **User error**
+- **Model generalisation**
+- **Model misuse**
+- **Model dating**
+- **Model comparison**
+
+## Review 
+
+We can learn a lot from best practices in software engineering.
+
+::: {.incremental}
+- **User error** Documentation, input checks, fail loudly, unit tests.
+- **Model misuse** Model Cards, documentation of training data.
+- **Model dating** Document dependencies, control charts, covariate shift / concept drift.
+- **Model comparison & generalisation** Shadow deployment, A/B testing, adaptive experimental design.
+:::
+
+. . .
+
+
+Can you think of any more? 
+
+# Writing model cards
+
+## Learn by doing - write your own 
+
+A lot of problems can be solved by writing documentation, but writing good docs is hard.
+
+::: {.callout-note title="Activity"}
+Working as a group, construct a model card for the following ML projects. 
+
+Focus on the structure, make up any details you need. (15 mins)
+
+<br>
+
+1. Anomaly detection in medical images.
+2. Real-time anomaly detection to identify financial fraud.
+3. Personalised product recommendations for an online retailer.
+4. A ChatBot on the hompeage of an online education company.
+5. Predictive maintenance of mechanical components in a factory.
+
+:::
+
+## Model card review 
+
+<br>
+
+**What did you include in your model card and why?**
+
+<br>
+
+1. Anomaly detection in medical images.
+2. Real-time anomaly detection to identify financial fraud.
+3. Personalised product recommendations for an online retailer.
+4. A ChatBot on the hompeage of an online education company.
+5. Predictive maintenance of mechanical components in a factory.
+
+# Reviewing Model Cards 
+
+## Reviewing Model Cards
+
+::: {.callout-note title="Activity"}
+
+Compare your model card & the example data sheets provided to those included in [Mitchell et al (2019)](https://arxiv.org/pdf/1810.03993.pdf). 
+
+- What does each do well? 
+- What would you change about both? 
+
+:::
+
+<br>
+
+::: {.callout-note title="Extension"}
+
+Compare the structure of your model cards to the templates used by huggingface.
+
+-  [Model Card Template](https://github.com/huggingface/huggingface_hub/blob/main/src/huggingface_hub/templates/modelcard_template.md) / [Data Sheet Template](https://github.com/huggingface/datasets/blob/main/templates/README_guide.md)
+  -  What does each do well?
+  -  Why is a template helpful?
+
+:::
+
+## Feedback from Groups 
+
+<br>
+
+Comparison to Mitchell et al and HuggingFace templates.
+
+**What does each do well? What would you change?**
+
+<br>
+
+1. Anomaly detection in medical images.
+2. Real-time anomaly detection to identify financial fraud.
+3. Personalised product recommendations for an online retailer.
+4. A ChatBot on the hompeage of an online education company.
+5. Predictive maintenance of mechanical components in a factory.
+
+
