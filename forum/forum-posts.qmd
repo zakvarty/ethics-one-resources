@@ -1,0 +1,278 @@
+---
+title: "Ethics 1 Forum Posts"
+toc: true
+format: 
+  html:
+    self-contained: true
+---
+
+## Week 1 
+
+### Data Pipeline Risks
+
+**Question:** Would you be able to expand on why "model deployment" or "monitoring" have ethical risks in the data pipeline? I never thought, especially deploying a model have ethical risks and cannot think of examples.
+
+**Response by another student:** 
+
+Model deployment:  The example given in the lecture was related to a platform choice - say you publish a very useful health monitoring app, but you decide it is much easier for you to only release it for the latest iOS version (which will not run on older phones).  Then, you might violate the idea of "Equity", since you only make this new solution accessible to those with access to a newer smartphone.  
+
+This argument can be stretched to reach into stranger realms - not everybody actually has, or wishes to use, a smartphone, so any model deployment of a public sort would imply some level of unequal access.
+
+**Response:**
+
+[Student] has given one nice example and logical extension based on the lecture material, around there being a difference in the deployment and training populations.
+
+A similar issue can arise when the true relationship between our predictors and response change over time. In this case our model could become invalid or discriminatory, even if we went to great lengths to ensure it was effective and fair at the time of deployment.
+
+In a more complex case, these changes could happen precisely because we have put the model into production. For example, if we alter the pricing of a product in a way that our modelling suggests will increase revenue, this might also alter the demographics of people interested in that product - invalidating the model that this price-change was originally based on.
+
+Hopefully that gives you an idea of how deploying a model can lead us to make sub-optimal and potentially discriminatory decisions. Monitoring models can be used to identify this but can sometimes requires prolonged observation from data subjects and this surveillance and use of the data needs to be carefully justified ahead of deployment.
+
+## Week 2
+ 
+### Method of Moments Estimation 
+
+**Question:** I was wondering if we have some material in week 2 explaining what "method of moments estimator" mean? This is in regards to solving the checkpoint exercises. I tried to find some material online but they were not very helpful in explaining the concept. 
+
+**Response:** The method of moments is an estimation technique where we estimate population properties by matching them to sample properties. For example, using the sample mean as an estimate of the population mean, or the sample variance as an estimate of the population variance. 
+
+(More accurately, we estimate model parameters $\theta_1, ... , \theta_p$ by simultaneously solving the system of equations $E[X^j] = \frac{1}{n}\sum_{i=1}^n x_i^j$ for $j = 1,...,p$, but this usually boils down to the description above).
+
+This is in contrast to other estimation methods, such as maximum likelihood estimation which would estimate these using the values which maximise the probability of observing the sample data, under some assumed data generating model. 
+
+You will study both MoM and ML in applicable maths, but the main idea of method of moments is just matching sample and population quantities. Section 9.2 of [All of Statistics](https://library-search.imperial.ac.uk/permalink/44IMP_INST/f7tnsv/alma991000449997201591) gives a good description and some worked examples.
+
+I have also produced an [explainer sheet](https://www.zakvarty.com/blog/2023-11-09-method-of-moments-estimation-for-ransomised-response-surveys/) that goes through some more examples. Alternatively, any undergraduate statistics textbook should have a good, in-depth discussion (without randomised responses). One example being Section 8.4 of [Rice (2007) Mathematical Statistics and Data Analysis](https://library-search.imperial.ac.uk/permalink/44IMP_INST/mek6kh/alma9955946929601591). 
+
+### K-anonymisation
+
+**Question:** In the Privacy Worksheet, Q2a) solution states:
+
+"There are several reasons why the gradebook is not 2-anonymous. The most obvious of these is that each student has a unique identification number student_id (by construction), date of birth dob and raw result score (by coincidence). There being even a single data attribute that is unique to each individual makes it 2-anonymity impossible, since each combination of attributes that appears in the database can not be repeated at least twice."
+
+In Checkpoint 1 Questions, Q1a), why does it not follow the same logic i.e. cannot be 2-anonymous since each customer has a unique spend?
+
+**Response:** Good question. This comes down to the two ways that the term $k$-anonymous is used in the literature. The first refers to anonymising a table or data set (as in the worksheet) and the second refers to k-anonymising one or more protected characteristics (as in the checkpoint exercises). Confusingly, these different terms are used to mean the same thing! In both cases we want to prevent the value of some protected characteristic (usually clear from context) from being identified based on combinations of the non-protected characteristics.
+
+In the case of the checkpoint exercises we want to prevent the raw `score` from being identified, while in the checkpoint question we want to prevent the `spend` value from being identified.
+
+I hope that helps.  Happy to discuss further in the office hour if needed.
+
+
+## Week 3
+
+### Video 3.2 misspeak
+
+**Question:** While going over the video of error parity, the definition of equal opportunity was introduced.
+
+As per the slide, it is equality in FNR but the explanation towards the end states that it is equality in FPR. Could this be clarified?
+
+**Response:** You are correct, this is a slip of the tongue by Chris here, thanks for pointing it out. 
+
+As in the slides and [Verma, S., & Rubin, J. (2018)](https://dl.acm.org/doi/10.1145/3194770.3194776), **equality of opportunity requires false negative rates to be equal**. Equivalently it requires equal true positive rates, since FNR = 1 - TPR. 
+
+I have added a note under the video on blackboard so that this is clear for everyone else. 
+
+### Slides 3.2.4 missing word
+
+**Question:** Is there a small typo in with week's part D video, 3 minutes in? I'm guessing it should be "while **not** making FPR increase too much". 
+
+**Response:** Correct and well spotted. I've added a note below the video. 
+
+### Fairness Definitions 
+**Question:** 
+
+From the slides we have the following definitions
+
+> - Error rate equal across groups (Error Parity)
+> - FNR equal across groups (Equal Opportunity)
+> - FPR equal across groups (Predictive Equality)
+> - Both FPR and FNR equal across groups (Equalised Odds)
+
+The paper [fairness definitions explained]() has them as in the slides but I sometimes see them as: 
+
+- Equal opportunity equality of TPR 
+- Equalised odds equality of FPR and TPR. 
+
+Since FNR is 1 - TPR, so it's saying the same thing from an equivalence perspective, but does one convention trump the other?
+
+**Response:** There is no convention on which to use but often people will choose based on the context or argument that they are trying to make.  For example people often frame things in terms of FNR when a "positive" prediction corresponds to contextually bad thing (e.g. saying we should fail to detect cancers equally across protected groups) and TPR when a "positive" prediction corresponds to a contextually good thing (we should grant loans to those who will repay them with equal probability across protected groups).
+
+Of course, you are right in stating that these definitions are mathematically equivalent and so this is largely matter of rhetoric and communicating in the clearest way to your intended audience.  
+
+
+## Week 4
+
+### Privacy Worksheet Question 4a
+
+**Question:** Can I ask why the first term is included in the calculation of the probability:
+
+$$ \Pr(A) = \Pr((S \cap TT ) \ \cup \ (S^C \cap H) \ \cup \ (S^C \cap TT)).$$
+The event $A$ is the event of responding against the broadcaster. In case of $TT$, the response is always against the broadcaster. Am I missing something else?
+
+**Response:** That is correct and indicated in the third term. I have just expressed the event $TT$ as $ (TT \cap S) \cup (TT \cap S^c)$. 
+
+## Week 5
+
+### Counterfactual Explanations in video 5.1
+
+**Question:** In the first lecture video, 5.1, counterfactual explanations are described as of way providing some explanation while not revealing details of the algorithm – but I wonder if they do? In the example given of “loaned denied because annual income was 30k, had it been 45k you would have been offered a loan”. Does this not implicitly leak the (possibly useful) information that there is a classification threshold that is sensitive to the value of the input feature ‘income’, and the pivotal value of this feature lies in the range 30-45k?
+
+**Response:** You are right that this does give some information of the algorithm, and in the case where income is the only predictor this would almost completely describe the decision algorithm. However, this is not the case in the more realistic case of multiple predictors.  The location, shape or existence of this decision boundary might be conditional on the value of one or more  other predictors. In this case much less information on the decision process is gleaned from the counterfactual statement, which must additionally be restricted to only mutable predictors.  
+
+
+### Multicollinearity in video 5.2
+
+**Question:** In the second lecture video, 5.2 @ 8:38 (screenshot below), although not mentioned explicitly, is it describing [multicollinearity](https://en.wikipedia.org/wiki/Multicollinearity)?
+
+**Response:** Multicollinearity is when you have two or more predictors with a strong linear relationship with one another (e.g. height in cm and height in inches). This can cause the estimated effect size for both predictors to be very uncertain, because you don’t know to which predictor you should attribute variation in the response. In extreme cases this can mean we are not able to fit the model at all. This is something you will explore more in supervised learning. 
+
+![](images/Simpsons_paradox_animation.gif)
+
+What we see here is an example of Simpson’s paradox (which, confusingly, isn’t actually a paradox), or ecological bias. This is the phenomenon where grouping by or conditioning on a predictor changes the effect another predictor so much that it changes direction. The gif below demonstrates this effect quite nicely. This is something we explore in detail during part 2 of the ethics course when we look again at explainability. 
+
+
+## Week 6 
+
+## Reading Summaries 
+
+
+### RP Reference Style
+
+**Question:** Please could you confirm that we should follow the guidelines for referencing available at the link below? [Imperial Library, Harvard Style](https://www.imperial.ac.uk/admin-services/library/learning-support/reference-management/harvard-style/your-reference-list/)
+
+**Response**: Yes, that would be a good resource to follow. You may use any common referencing style, it doesn't need to be Harvard (e.g. MLA, APA, Vancouver). 
+
+The important thing is to give enough information to clearly identify and locate the paper or resource if revisit your reading summary a few years later. 
+
+### Referencing other texts
+
+**Question:** Do we need to reference the text we are writing the RP for even if we do not quote from it directly? Are we expected to include references to other texts too? 
+
+**Response:** As in the linked example, your rhetorical precis should begin with an accurate bibliographic reference for the text that it is summarising. This reference allows you to locate the text again in the future, based on your summary. Within the example, this would be: 
+_Barry, Dave. “The Ugly Truth about Beauty.” Mirror on America: Short Essays and Images from popular Culture. 2nd ed. Eds. Joan T. Mims and Elizabeth M. Nollen. NY: Bedford, 2003. 109-12._ 
+
+If you draw comparisons to other texts within the body of your summary (perhaps highlighting complementary or contrasting literature) then you should reference these as you would be in a longer piece of writing, e.g. in an essay or technical report. 
+
+The only reference required is one to the text that is being summarised. This is included in an RP so that the text can be uniquely identified and found again in the future. Additional references to other sources are entirely optional. These should usually be used sparingly, given that the RP is only four sentences long.
+
+### RP Marking
+
+**Question:** Just doing a peer review for this weeks RP. How strict does one need to be with the use of "that" in the first sentence, and "in order to" in the third sentence? The one I am looking at reads well and conveys all the salient points but does not use these terms specifically.
+
+**Response:** There is no need to use those phrases in particular, so long as the sentence achieves its stated aim.
+
+### RP Feedback Style 
+
+When writing and reading feedback please be aware of the variety of backgrounds, cultures and opinions we have within the cohort. This will impact not only people's interpretation of the reading material but also what effective feedback means to each of us. 
+
+I expect that these reviews should be balanced, commenting **both** on what the reading summary does well **and** giving polite suggestions as to how the summary might be improved. Please be aware of the tone of your writing: the purpose of this feedback is to support and encourage your fellow students. 
+
+You have all been very good at this during live sessions and office hours, please extend the same considerations when giving feedback.
+
+
+### Identifying the intended audience 
+
+**Question:** In the final sentence, when describing the audience of the paper, if the audience is not explicitly stated (or perhaps isn’t immediately clear), should we be trying to guess at which specific groups are being addressed (e.g. specifically identifying roles and professions such as ‘data scientists’, ‘data engineers’)? Or should it remain quite general (e.g. ‘leaders’, ‘stakeholders’ and ‘decision-makers’)
+
+**Response:** Depending on the paper either might be appropriate. If the target audience is not mentioned explicitly then you should provide an informed opinion on who this might be. (Guessing but with context!) 
+
+## Quizzes 
+
+### Quiz 1.2 Question 5
+
+**Question:** In Quiz 2 question 5, is "Deleting the weight variable altogether" also a correct answer (meaning it might introduce ethical risk)?
+
+I don't see why removing a feature from our data could bring an ethical risk as we may bring another problem to our model by just deleting it from our data (such as not being able to resolve or find a model with a good performance), but I don't see why it is considered as an ethical risk.
+
+As a general thinking, in a survey, I would prefer put more questions/information to collect and then selected what is relevant to the model than having less information. Could be seen as non-ethical scenario? 
+
+**Response:**
+
+Deleting the weight column might or might not pose an ethical risk, depending whether true weight influences any of: the likelihood of non-response to the weight question, the efficacy of the treatment or the chance of any side-effects. 
+
+For example, suppose that bariatric patients are less likely to disclose their weight and also see much smaller treatment benefits than non-bariatric patients. Deleting the weight information entirely would not allow us to identify this weight effect, and so bariatric patients would be prescribed an ineffective treatment (and suffer any side-effects) for no real benefit.
+
+### Quiz 2.1 Question 1
+
+**Question:** For the first part of W2 quiz, I chose "Notice/awareness" as answer when the correction is saying "Choice/Consent".
+
+In which of the five FCT principles is the OECD "purpose specification" principle captured? Is the "purpose specification" not already captured within the NOTICE/AWARENESS? As we can read in the guideline that  
+
+>"Notice of some or all of the following have been recognized as essential to ensuring that consumers are properly informed before divulging personal information : 
+>- identification of the uses to which the data will be put;"
+
+At the Choice/Consent level, it is more the possibilities to modify or finetune the accepted purpose specification than really informing the user of the purpose specification (which I would consider more within the Notice/awareness level).
+
+**Response:** I agree that based on your response either "Notice / Awareness" or "Choice / Consent" could be valid repsonses to this question.  (Particularly given that FCT explicitly mentions that principles 2-5 are all reliant on Notice / Awareness)
+
+Consent was listed as the answer here because the OECD document explicitly mentions the timing of obtaining consent, which is laid out in greater detail within in the Choice/Consent section of FCT.
+
+Thanks for bringing this up and for engaging with the quizzes in such detail! 
+
+### Quiz Genershades Question 5
+
+**Question:** 
+
+>The gender classification systems used in this paper use training data labelled with:
+>
+>Correct Answer: E. Unknown
+
+Page 3, Section 3. of the paper states "In this work we use the sex labels of 'male' and 'female' to define gender classes since the evaluated benchmarks and classification systems use these binary labels". Have I misread this or missed some other comments in the text, or should the answer be "biological sex"? 
+
+**Response:**
+
+The quote you give refers specifically to the Pilot Parliaments Benchmark dataset used in the intersectional study. In the PPB data, gender labels were based on perceived gender (through some unknown combination of the observed traits above), rather than established directly through a survey to establish the sex or gender of the photographed individuals. 
+
+From the below quotations, we can see that the labels used for the non-intersectional study were obtained by a similar (but less extensive) approach to establishing the perceived gender of the individuals and that the labelling method for the Adience dataset is unknown. 
+
+Since the question is not specific to one dataset, the labelling is therefore also unknown. That said, if you were considering only the intersectional PPB data, then "neither" would be a correct response. 
+
+_Under the heading Existing Benchmark Selection Rationale (page 5)_
+
+> "The Adience benchmark contains 2,284 unique individual subjects. 2,194 of those subjects had reference images that were discernible enough to be labeled by skin type and gender."
+
+_Under the Gender Labels section (page 6)_ 
+
+> "The companies provide no documentation to clarify if their gender classifcation systems which provide sex labels are classifying gender identity or biological sex. To label the PPB data, we use female and male labels to indicate subjects perceived as women or men respectively."  
+
+## Misc
+
+### Interesting Resources 
+
+- United Nations blog post: [Avoiding the artificial intelligence divide in developing countries](https://www.unsdglearn.org/blog/avoiding-the-artificial-intelligence-divide-in-developing-countries/).  
+
+- [Executive order](https://www.whitehouse.gov/briefing-room/statements-releases/2023/10/30/fact-sheet-president-biden-issues-executive-order-on-safe-secure-and-trustworthy-artificial-intelligence/?utm_source=link) by President Biden (Oct 2023) on Safe, Secure and Trustworthy AI.
+
+- [BBC News article](https://www.bbc.co.uk/news/technology-67302788) on risk insider training when using AI.
+
+- Randomised response resources: [worked example](https://online.stat.psu.edu/stat506/lesson/12/12.3) from Penn State, [MEI question sheet](http://vle.woodhouse.ac.uk/topicdocs/maths/comprehensionfiles/PT1_Randomised_Response_Technique.pdf).
+
+### Licensing for Git Repos 
+
+**Question:** I was wondering if and what kind of licensing should we go for if we publish a GitHub repository. By reading online, I understand that the MIT license is the one that gives the greatest freedom to other contributors (for example https://choosealicense.com/).
+
+**Response:**
+
+This is a great question and, unfortunately, that means it doesn't have a straightforward answer. It ultimately comes down to what you want to let other people do with your work.
+
+A long but non-exhaustive list of questions to consider when using choosing a license. 
+
+- Do you want people to be able to use your work without giving attribution to you?
+- Do you want people to be able to use your work without linking to your work? 
+- Do you want to let other people modify it to meet their needs? 
+- Do you want to restrict any further distribution, and the license on any modified versions of the code? 
+- Do you want to allow commercial use of your project, or only non-commercial?
+- How about for education purposes? 
+- What dependencies does your project have and what are their licenses? 
+- Is this work that you are doing on your own or behalf of a client: who owns the IP and copyright? 
+
+This is a lot to consider but it is also important to use some sort of license, particularly if you plan to collaborate on the project. (See below text from the [No License](https://choosealicense.com/no-permission/) section)
+
+> When you make a creative work (which includes code), the work is under exclusive copyright by default. Unless you include a license that specifies otherwise, nobody else can copy, distribute, or modify your work without being at risk of take-downs, shake-downs, or litigation. Once the work has other contributors (each a copyright holder), “nobody” starts including you. 
+
+Some common choices of license on open source DS projects are below. It is also possible to apply different licences to different aspects of a project, for example code and reports.
+
+- [MIT](https://choosealicense.com/licenses/mit/) 
+- [GNU Lesser General Public License v3.0](https://choosealicense.com/licenses/lgpl-3.0/)
+- [Creative Commons](https://creativecommons.org/share-your-work/)
