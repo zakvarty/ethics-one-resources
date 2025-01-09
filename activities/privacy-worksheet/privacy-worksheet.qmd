@@ -9,10 +9,10 @@ ____
 Define the following terms: 
 
 1. A $k$-anonymous database
-2. Data supression
+2. Data suppression
 3. Data generalisation
-4. Background-knowledge attack
-5. Homogeneity attack 
+4. Homogeneity attack 
+5. Background-knowledge attack
 
 
 :::: {.content-visible unless-profile="questions"}
@@ -23,13 +23,14 @@ Define the following terms:
 
 3. Data generalisation is a method for anonymising data by using grouping to reduce the granularity of a data set.
 
-4. A background-knowledge attack uses additional data, external to a database, to break or reduce the level of anonymity within that database.  
-
-> __Example:__ Suppose the attacker knows that Jane Doe is 32 years old and that all women receiving HIV treatment in the area are over 40. Alone, this information tells the attacker that Jane does not have HIV. In combination with the hospital records from previous example it also reveals the diagnoses of all three women.
-
-5. A homogeneity attack exploits k-anonymity to establish that an individual has a protected attribute that takes one of a small number of values.
+4. A homogeneity attack exploits k-anonymity to establish that an individual has a protected attribute that takes one of a small number of values.
 
 > __Example:__ A hospital records the gender, age and diagnosis of all patients on a ward. Three entries relate to women aged 35-45 on ward C. Two of these women are diagnosed with HIV while the other has hepatitis. An attacker can conclude the Jane Doe has one of these two diseases.
+
+4. A background-knowledge attack uses additional data, external to a database, to break or reduce the level of anonymity within that database.  
+
+> __Example:__ Suppose the attacker knows that Jane Doe is 35 years old and that all women receiving HIV treatment on ward C are over 40. Alone, this information tells the attacker that Jane does not have HIV. However, in combination with the hospital records from previous example it _also_ reveals that Jane has been diagnosed with hepatitis and that other two women on ward C with HIV.
+
 :::
 ::::
 
